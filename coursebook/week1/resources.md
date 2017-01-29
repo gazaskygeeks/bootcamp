@@ -16,3 +16,7 @@ Good reads about "Divitis"
   - http://getbem.com/naming/
 - SMACSS (Scalable and modular architecture for CSS)
   - https://smacss.com/
+  
+## Markdown
+  
+- [Markdown Cheatsheet](https://github.com/adam-p/markdown-here/wiki/Markdown-Cheatsheet)
