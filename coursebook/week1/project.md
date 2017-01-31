@@ -56,9 +56,9 @@ Your team needs to set up a new repository under the [gaza sky geeks organizatio
 
 You may also add more ambitious features in the README which describes **stretch goals**. Feel free to add the user stories from this project guide into your README too.
 
-When working together, groups should split into pairs, making sure they are constantly communicating with each other.
+When working together, groups should **split into pairs**, making sure they are constantly communicating with each other.
 
-Divide the tasks between the pairs, and decide how you will work together to avoid conflicts in your code. However you decide to individualise your site is up to you, but aim to satisfy the user stories.
+**Divide the tasks between the pairs**, and decide how you will work together to avoid conflicts in your code. However you decide to individualise your site is up to you, but aim to satisfy the user stories.
 
 Your blog should have profiles of each of your group members and each profile should include links to your *Linkedin* and *Github* accounts.
 
