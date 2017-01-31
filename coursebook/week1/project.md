@@ -76,9 +76,9 @@ We will also be checking your site for accessibility on [Tenon.io](https://tenon
 - You ~~may~~ will encounter merge conflicts when working together on the same files. Don't panic, discuss the conflicts with your team before reaching a resolution.
 - If you decide to use and stick to a particular naming convention for your CSS classes before starting the project then that's awesome! At the very least, aim to organise your CSS rules so they grouped together well and use clear descriptive class names.
 
-**Note: You should stop working on your profile after 6PM wednesday.**
+**Note: You should stop working on your profile after 6PM Wednesday.**
 
-**WORKING ON YOUR SITE FROM HOME AFTER 6PM THURSDAY BAD, DON'T DO IT**
+**WORKING ON YOUR SITE FROM HOME AFTER 6PM WEDNESDAY BAD, DON'T DO IT**
 
 **On Thursday morning, you'll be swapping code with another team and raising issues on their code, before resolving issues that you have received.**
 
