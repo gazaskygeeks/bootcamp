@@ -6,7 +6,6 @@ Some of the sub-topics may take longer than others - if you finish earlier than 
 
 # Teams
 
-
 # Using the Command Line
 - Write a tutorial on how to use the command line to find out which directory you're in, how to print its contents, and how to move to another directory.
 - What is Bash?

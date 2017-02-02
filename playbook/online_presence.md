@@ -15,4 +15,4 @@ Here is a checklist:
 - Follow and endorse each other on Github (star liberally), Linkedin and Twitter
 - Contribute to open source projects on Github
 Contribute to open source learning materials on Github (like ours!)
-Contribute to Linkedin forums and groups
+Contribute to LinkedIn forums and groups
