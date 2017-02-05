@@ -46,7 +46,7 @@ function todo() {
 }
 
 todo.addTask('Study javascript');
-todo.addTask('Go to the shop and buy falafels');
+todo.addTask('Go to the shop and buy falafel');
 todo.addTask('Push directly to master');
 todo.addTask('Write tests for todo app');
 
@@ -58,7 +58,7 @@ todo.showList(); // returns
  *    id: 1
  *  },
  *  {
- *    text: 'Go to the shop and buy falafels',
+ *    text: 'Go to the shop and buy falafel',
  *    id: 2
  *  },
  *  {
@@ -70,5 +70,22 @@ todo.showList(); // returns
  *    id: 4
  *  }
  * ]
+ */
+
+todo.done(3);
+todo.done(1);
+
+todo.showList(); // returns
+/**
+ * [
+ *  {
+ *    text: 'Go to the shop and buy falafel',
+ *    id: 2
+ *  },
+ *  {
+ *    text: 'Push directly to master',
+ *    id: 4
+ *  }
+ * [
  */
 ```
