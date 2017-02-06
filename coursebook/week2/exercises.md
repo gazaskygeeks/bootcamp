@@ -1,12 +1,10 @@
 # Exercises
-
 These are a set of exercises to learn and consolidate your javascript skills.
 They all **MUST** be tackled following a TDD approach.
 
 Form new groups of two people by drawing out a name from the basket.
 
 # url splitting
-
 If you are wondering what is an URL checkout wikipedia [here](https://goo.gl/5EwlvL).
 
 Write a function which takes a URL string and returns an object:
@@ -16,12 +14,13 @@ function splitUrl(url) {
   // code here
 }
 
+// these are some example of possible ur
 var simple = 'https://www.google.com';
 var medium = 'https://www.google.com/blog?name=Bes';
 var hard = 'https://www.google.com:8080/blog/trend?name=Bes&age=26#modal';
 ```
 
-The object returned should have the following properties:
+The **object** returned should have the following properties:
 ```js
 // for `hard` example
 {
@@ -37,20 +36,20 @@ The object returned should have the following properties:
 ```
 
 # todo
-
 Write a function named `todo`, which behaves as follows:
-
 ```js
 function todo() {
   // code here
 }
 
-todo.addTask('Study javascript');
-todo.addTask('Go to the shop and buy falafel');
-todo.addTask('Push directly to master');
-todo.addTask('Write tests for todo app');
+var list_work = todo();
 
-todo.showList(); // returns
+list_work.addTask('Study javascript');
+list_work.addTask('Go to the shop and buy falafel');
+list_work.addTask('Push directly to master');
+list_work.addTask('Write tests for todo app');
+
+list_work.showList(); // returns
 /**
  * [
  *  {
@@ -72,10 +71,10 @@ todo.showList(); // returns
  * ]
  */
 
-todo.done(3);
-todo.done(1);
+list_work.done(3);
+list_work.done(1);
 
-todo.showList(); // returns
+list_work.showList(); // returns
 /**
  * [
  *  {
