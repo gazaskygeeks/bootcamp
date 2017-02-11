@@ -28,7 +28,7 @@ test('Third', function(t) {
 
 When run the code should produce this output.
 
-![repl](https://git.io/vDcYn)
+![repl](https://raw.githubusercontent.com/besarthoxhaj/breakfast/master/_assets/repl_logs_tape.png)
 
 **Please** don't look around the internet, will not help you much, even if you
 find the solution. Note how the second argument of the `test` function is **another function**.
