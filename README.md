@@ -1,5 +1,7 @@
 ## Gaza Sky Geeks Bootcamp Program
 
+Join the [Gitter channel](https://goo.gl/Dd3W0y).
+
 Official Gaza Sky Geeks Bootcamp Program. The 4 weeks full-time immersive course is peer-led and project-based with sixteen students working in four teams of four. Students take turns delivering seminars, running code reviews and managing projects. The course covers test-driven development, using a full JavaScript stack (JavaScript and Node.js) as well as aspects of UX design and product management.
 
 Following a partial list of the topics students will cover:
