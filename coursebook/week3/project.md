@@ -32,6 +32,10 @@ APIs, you are free to use any APIs you would like, but we recommend the followin
 - choose two APIs the group likes
 - think what to build with them
 - signup and check with postman the kind of data they return
+  - signup in case you need the API-KEY
+  - check the documentation to see what data they return
+  - with POSTMAN get familiar with the API by querying it
+  - try to replicate the same functionality with XHR request
 - plan the front end and functionality
 - write some user stories
 - divide the work between pairs

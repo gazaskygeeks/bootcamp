@@ -8,17 +8,27 @@ of Http is).
 
 Here is a simple example of how you can make an XML request:
 
-```js
-var myRequest = new XMLHttpRequest();
+```html
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+  </head>
+  <body>
+    <script type="text/javascript">
+      var myRequest = new XMLHttpRequest();
 
-myRequest.onreadystatechange = function() {
-  if (myRequest.readyState === 4 && myRequest.status === 200) {
-    document.getElementById("demo").innerHTML = myRequest.responseText;
-  }
-};
+      myRequest.onreadystatechange = function() {
+        if (myRequest.readyState === 4 && myRequest.status === 200) {
+          console.log(myRequest.responseText);
+        }
+      };
 
-myRequest.open("GET", "xmlhttp_info.txt", true);
-myRequest.send();
+      myRequest.open("GET", "<URL>", true);
+      myRequest.send();
+    </script>
+  </body>
+</html>
 ```
 
 Read through the code to get an impression of the structure and what's going on.
