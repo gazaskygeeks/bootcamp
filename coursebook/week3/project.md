@@ -24,6 +24,7 @@ APIs, you are free to use any APIs you would like, but we recommend the followin
 - [Text meaning](https://www.textrazor.com/)
 - Google geolocation or maps
 - and more... https://github.com/toddmotto/public-apis
+- even more... https://market.mashape.com/explore
 
 **Notes:**
 
