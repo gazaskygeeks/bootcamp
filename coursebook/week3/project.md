@@ -26,6 +26,17 @@ APIs, you are free to use any APIs you would like, but we recommend the followin
 - and more... https://github.com/toddmotto/public-apis
 - even more... https://market.mashape.com/explore
 
+**Plan of attack:**
+
+- look at the list of the APIs all together
+- choose two APIs the group likes
+- think what to build with them
+- signup and check with postman the kind of data they return
+- plan the front end and functionality
+- write some user stories
+- divide the work between pairs
+- start working
+
 **Notes:**
 
 Most APIs provide a HTTP interface, where you query URLs to receive data. Some
