@@ -17,7 +17,13 @@ APIs, you are free to use any APIs you would like, but we recommend the followin
 - [OMDb](http://www.omdbapi.com/)
 - [NASA](https://api.nasa.gov/)
 - [Star Wars API](https://swapi.co/)
+- [MS Cognitive Services](https://www.microsoft.com/cognitive-services/en-us/)
+- [Nutrition](https://www.nutritionix.com/business/api)
+- [Random image generator](https://unsplash.it/)
+- [News API](https://newsapi.org/)
+- [Text meaning](https://www.textrazor.com/)
 - Google geolocation or maps
+- and more... https://github.com/toddmotto/public-apis
 
 **Notes:**
 
@@ -65,7 +71,7 @@ problems with this option.
 **Keep in mind:**
 
 - Hiding confidential information. When querying APIs with API keys, don't push
-  these to Github! (`.gitignore`)
+  these to Github! Use `.gitignore` and [hide](https://gist.github.com/derzorngottes/3b57edc1f996dddcab25)
 
 - DOM manipulation is expensive. Think of ways that you can minimise the number
   of DOM insertions in your code.
