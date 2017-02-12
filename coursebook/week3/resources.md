@@ -8,3 +8,25 @@
 - [Codeacademy API course](https://www.codecademy.com/learn/ibm-watson)
 - [cool API list you could use for the project](https://market.mashape.com/explore)
 - [Mozilla dev network XHR request guide](https://developer.mozilla.org/en/docs/Web/API/XMLHttpRequest/Using_XMLHttpRequest)
+
+## Abstraction
+
+Writing the normal XHR request is long and hard to read. Think about abstracting
+away all the complexity.
+
+Create a function `request` which performs the XHR.
+
+```js
+function request (url, cb) {
+  var xhr = new XMLHttpRequest();
+  xhr.onreadystatechange = function() {
+    if (xhr.readyState === 4 && xhr.status === 200) {
+      cb(null, xhr.responseText);
+    } else {
+      console.log("waiting for response");
+    }
+  };
+  xhr.open("GET", url, true);
+  xhr.send();
+}
+```
