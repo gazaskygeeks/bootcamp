@@ -38,7 +38,7 @@ function start(num){
             var res = start(5).add(2).add(3).add(20).result();
              console.log("res "+res);```
 
-----
+-----------
 
 # 02
 
@@ -102,7 +102,7 @@ TemplateEngine(template, {
   myText: 'We are developers'
 });
 ```
-----
+---------
 
 # 03
 
@@ -146,7 +146,7 @@ function change(selector){
  }
 change('div').height('200px').width('200px').backgroundColor('BLACK');
 ```
-----
+------------
 
 # 04
 
@@ -222,7 +222,7 @@ test('Third', function(t) {
   t.equal(3,3,'three is equal to three');
 });
 ```
------
+----------
 
 # 05
 
@@ -265,7 +265,7 @@ return deepEqual(a[elm],b[elm]);
 });
 };
 ```
-------
+-------------
 # 06
 ```js
 /**
@@ -319,7 +319,7 @@ var data = [
 remove(data,2);
 remove(data,4);
 ```
------
+------------
 # 07
 
 ```js
@@ -361,7 +361,7 @@ for (var i = 0 ; i < 10000; i++){
   numberOfTimes[randomName]++;
 }
 ```
---------
+----------------
 # 08
 ```js
 var numberOfTimes = {
@@ -401,7 +401,7 @@ function randomSelect(list) {
   return randName;
 }
 ```
-------
+------------
 # 09
 ```js
 var a = [
@@ -443,7 +443,7 @@ function transform(list){
 
 }
 ```
-------
+-------------
 # 10
 ```js
 /**
@@ -501,7 +501,7 @@ var $ = jQuery(fakeDoc);
 $('#one').addClass('my class!');
 $('#one').text('Hello World!');
 ```
--------
+---------------
 # 11
 ```js
 /**
@@ -589,7 +589,7 @@ var parse_add_multiply_subtract = pipe(
 
 parse_add_multiply_subtract('2');
 ```
------
+--------------
 # 12
 ```js
 /**
@@ -705,7 +705,7 @@ waterfall('5', [
   console.log(res); // => 3
 });
 ```
-------
+-------------
 # 13
 ```js
 /*
@@ -796,7 +796,7 @@ console.log('err ',err); // undefined
 console.log('result ',result); // [1,2,3]
 });
 ```
------
+----------
 # 14
 ```js
 /**
