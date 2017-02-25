@@ -11,3 +11,10 @@ On Heroku:
 
 - [Scheduled Jobs and Custom Clock Processes:](https://goo.gl/66M8Jg) is a way
   to programatically run processes at specific times or intervals.
+
+On APIs:
+
+- [Google Sheets:](https://developers.google.com/sheets/)
+- [CodeWars:](https://dev.codewars.com/)
+- [Facebook Messenger:](https://developers.facebook.com/docs/messenger-platform)
+- [Twilio:](https://www.twilio.com/)
