@@ -1,4 +1,4 @@
-## Coding Challenge
+# Coding Challenges
 
 # 01
 
@@ -41,6 +41,7 @@ function start(num){
 ----
 
 # 02
+
 /**
  * Let's build a template engine.
  * Write a function `block` which takes
