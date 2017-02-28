@@ -59,15 +59,16 @@ function block (/* args */) {
   // code here
 }
 
-var template =
-   '<div class="container">'
- +   '<h1 class="title">{{content}}</h1>'
- + '</div>'
- + '<div class="body">'
- +   '<p>{{myText}}</p>'
- + '</div>';
+var template = [
+  '<div class="container">',
+    '<h1 class="title">{{content}}</h1>',
+  '</div>',
+  '<div class="body">',
+    '<p>{{myText}}</p>',
+  '</div>'
+].join('');
 
-block(template).render({
+block(template, {
   content: 'Hello GSG',
   myText: 'We are developers'
 });
@@ -82,28 +83,17 @@ block(template).render({
  * </div>
  */
 ```
-  #### Solution
+### Solution
 
-  ```js
-  var TemplateEngine = function(tpl, data) {
-  Object.keys(data).forEach(function(key){
-    console.log(key);
-    tpl = tpl.replace("{{"+key+"}}", data[key])
-  })
-    return tpl;
+```js
+function block(tpl, data) {
+
+  Object.keys(data).forEach(function(key) {
+    tpl = tpl.replace("{{"+key+"}}", data[key]);
+  });
+
+  return tpl;
 }
-var template =
-   '<div class="container">'
- +   '<h1 class="title">{{content}}</h1>'
- + '</div>'
- + '<div class="body">'
- +   '<p>{{myText}}</p>'
- + '</div>';
-
-TemplateEngine(template, {
-  content: 'Hello GSG',
-  myText: 'We are developers'
-});
 ```
 
 # 03
@@ -558,40 +548,12 @@ var pipe = function() {
 
   var args = Array.prototype.slice.call(arguments);
 
-  return function(n){
-    return args.reduce(function(acc,elem){
-      return elem(acc);
+  return function(n) {
+    return args.reduce(function(acc,elm) {
+      return elm(acc);
     },n);
   }
 };
-
-function add_one (n) {
-  const total = n + 1;
-  return total;
-}
-
-function less_one (n) {
-  const total = n - 1;
-  return total;
-}
-
-function multiply_two (n) {
-  const total = n * 2;
-  return total;
-}
-
-function start (n) {
-  return parseInt(n);
-}
-
-var parse_add_multiply_subtract = pipe(
-  start,
-  add_one,
-  multiply_two,
-  less_one
-);
-
-parse_add_multiply_subtract('2');
 ```
 
 # 12
@@ -665,52 +627,16 @@ start('1',function(n){
 ### Solution
 
 ```js
-var waterfall = function(value, arg ,cb) {
+var waterfall = function(value, arg, cb) {
 
   if( arg.length === 0){
     cb(value);
   }
 
   arg[0](value,function(total) {
-     waterfall(total,arg.slice(1),cb);
+     waterfall(total,arg.slice(1), cb);
   });
 }
-
-function add_one (n,cb) {
-  setTimeout(function(){
-    const total = n + 1;
-    cb(total);
-  },200);
-}
-
-function less_one (n,cb) {
-  setTimeout(function(){
-    const total = n - 1;
-    cb(total);
-  },200);
-}
-
-function multiply_two (n,cb) {
-  setTimeout(function(){
-    const total = n * 2;
-    cb(total);
-  },200);
-}
-function start (n,cb) {
-  setTimeout(function(){
-    const total = parseInt(n)
-    cb(total);
-  },200);
-}
-
-waterfall('5', [
-  start,
-  add_one,
-  multiply_two,
-  less_one
-], function(res) {
-  console.log(res); // => 3
-});
 ```
 
 # 13
@@ -781,27 +707,6 @@ function parallel(tasks,finalCallback) {
     taskfn(callback);
   });
 }
-
-parallel([
-  function(callback) {
-    setTimeout(function() {
-      callback(undefined,1);
-    },2000);
-  },
-  function(callback) {
-    setTimeout(function() {
-      callback(undefined,2);
-    },1000);
-  },
-  function(callback) {
-    setTimeout(function() {
-      callback(undefined,3);
-    },1500);
-  },
-], function(err,result) {
-  console.log('err ',err); // undefined
-  console.log('result ',result); // [1,2,3]
-});
 ```
 
 # 14
@@ -853,6 +758,8 @@ var obj = {
     lastName:'foo'
   }
 };
+
+analyse('d', obj); // TODO
 ```
 
 ### Solution
@@ -868,6 +775,4 @@ function analyse (lastFirstLetter,data) {
       return acc;
   },{data:[]});
 }
-
-analyse('d', obj);
 ```
