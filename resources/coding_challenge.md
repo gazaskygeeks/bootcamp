@@ -1,7 +1,12 @@
 # Coding Challenges
 
+List of the coding challenges with solutions. Generally speaking the challenges
+are hard to copy/paste so advise students not to look look around the internet
+for the solution.
+
 # 01
 
+```js
 /**
  * Let's learn method chaining!
  * Write a function `start` which takes
@@ -14,35 +19,34 @@
  *
  * Good luck!
 **/
-```js
 function start (num) {
   // code here
 }
 ```
 
-## Solution
+### Solution
+
 ```js
 function start(num){
-            var store=num;
-            var obj={
-              add:function(num1){
-                store = store + num1;
-                return obj;
-              },
-              result : function(){
-                return store;
-              }
-            }
-            return obj;
-          }
-            var res = start(5).add(2).add(3).add(20).result();
-             console.log("res "+res);
-             ```
-
------------
+  var store=num;
+  var obj={
+    add:function(num1){
+      store = store + num1;
+      return obj;
+    },
+    result : function(){
+      return store;
+    }
+  }
+  return obj;
+}
+var res = start(5).add(2).add(3).add(20).result();
+console.log('res', res);
+```
 
 # 02
 
+```js
 /**
  * Let's build a template engine.
  * Write a function `block` which takes
@@ -51,8 +55,6 @@ function start(num){
  * which takes as input an object e.g. `{text:'Hello'}
  * and returns the final string e.g. `<p>Hello</p>`.
 **/
-
-```js
 function block (/* args */) {
   // code here
 }
@@ -69,18 +71,18 @@ block(template).render({
   content: 'Hello GSG',
   myText: 'We are developers'
 });
+
+/**
+ * Result should be:
+ * <div class="container">
+ *  <h1 class="title">Hello GSG</h1>
+ * </div>
+ * <div class="body">
+ *  <p>We are developers</p>
+ * </div>
+ */
 ```
-
-  Result should be:
-
-  <div class="container">
-    <h1 class="title">Hello GSG</h1>
-  </div>
-  <div class="body">
-    <p>We are developers</p>
-  </div>
-
-  ## Solution
+  #### Solution
 
   ```js
   var TemplateEngine = function(tpl, data) {
@@ -103,10 +105,10 @@ TemplateEngine(template, {
   myText: 'We are developers'
 });
 ```
----------
 
 # 03
 
+```js
 /**
  * Let's build JQuery.
  * Create a function `$` which takes as input a
@@ -116,41 +118,38 @@ TemplateEngine(template, {
  *  - $(selector).toggleClass('.info');
  *  - $(selector).height(200).width(200).backgroundColor('red');
 **/
-```js
 function $ (selector) {
   // code here
 }
 ```
 
-## Solution
+### Solution
 
 ```js
 function change(selector){
- console.log("test",selector);
  var div1 = document.querySelector(selector);
- console.log("div1",div1);
-   var obj = {
-     height:function(height){
-       div1.style.height = height;
-       return obj;
-     },
-     width: function(width){
-       div1.style.width = width;
-       return obj;
-     },
-     backgroundColor:function(color){
-       div1.style.backgroundColor = color;
-       return obj;
-     }
+ var obj = {
+   height:function(height){
+     div1.style.height = height;
+     return obj;
+   },
+   width: function(width){
+     div1.style.width = width;
+     return obj;
+   },
+   backgroundColor:function(color){
+     div1.style.backgroundColor = color;
+     return obj;
    }
-   return obj;
  }
+ return obj;
+}
 change('div').height('200px').width('200px').backgroundColor('BLACK');
 ```
-------------
 
 # 04
 
+```js
 /**
  * Write a function `test` which takes two arguments.
  * The first argument is a `string` while the second is a `function`.
@@ -158,8 +157,6 @@ change('div').height('200px').width('200px').backgroundColor('BLACK');
  * the first argument and also check if the two arguments of `t` are equal.
  * If the two arguments of `t` are equal should print `OK:<message text>`.
  */
-
-```js
 function test (message,callbackFun) {
   // code here
 }
@@ -175,40 +172,33 @@ test('Second', function(t) {
 test('Third', function(t) {
   t.equal(3,3,'three is equal to three');
 });
+
+/**
+ * When run the code it should produce this output:
+ *
+ * # First
+ * OK: one is equal to one
+ * # Second
+ * ERROR: two is equal to two
+ * # Third
+ * OK: three is equal to three
+ */
 ```
-When run the code should produce this output.
 
-![alt text](https://raw.githubusercontent.com/besarthoxhaj/breakfast/master/_assets/repl_logs_tape.png)
-
-Please don't look around the internet, will not help you much, even if you find the solution. Note how the second argument of the test function is another function.
-
-Let's have a look at the first example. At runtime the arguments of test are:
-
-message = 'First'
-
-// while
-
-```js
-callbackFun = function (t) {
-  t.equal(1,1,'one is equal to one');
-}
-```
-to complete the requirements you need to log message and to evaluate and log what's in the body of callbackFun. How can you do that? By calling callbackFun itself! Note however that you have to pass one argument (t) to callbackFun.
-
-## Solution
+### Solution
 
 ```js
 function test (message,callbackFun) {
-  console.log("#"+message);
+  console.log('#', message);
   callbackFun({
-    equal:function(num1,num2,msg){
+    equal:function(num1,num2,msg) {
       if(num1==num2){
-        console.log("OK :"+ msg);
+        console.log('OK:', msg);
       }else{
-        console.log("Error: "+msg);
+        console.log('Error:', msg);
       }
     }
-  })
+  });
 }
 
 test('First',function(r) {
@@ -223,7 +213,6 @@ test('Third', function(t) {
   t.equal(3,3,'three is equal to three');
 });
 ```
-----------
 
 # 05
 
@@ -234,7 +223,6 @@ test('Third', function(t) {
  * or to arrays got the same elements. Write a function which
  * compares two nested objects or arrays.
  */
-
 var deepEqual = function(/* .... */) {
   // code here
 };
@@ -255,19 +243,26 @@ console.log(deepEqual(
 )); // -> true
 ```
 
-## Solution
+### Solution
+
 ```js
 var deepEqual = function(a,b) {
-if(typeof a !== 'object' && typeof b !== 'object'){ return a === b;}
+  if(typeof a !== 'object' && typeof b !== 'object') {
+    return a === b;
+  }
 
-if (Object.keys(a).length !== Object.keys(b).length) return false;
-return Object.keys(a).every(function(elm){
-return deepEqual(a[elm],b[elm]);
-});
+  if (Object.keys(a).length !== Object.keys(b).length) {
+    return false;
+  }
+
+  return Object.keys(a).every(function(elm){
+    return deepEqual(a[elm],b[elm]);
+  });
 };
 ```
--------------
+
 # 06
+
 ```js
 /**
  * Write a function remove which
@@ -300,10 +295,11 @@ console.log(data);
 **/
 ```
 
-## Solution
+### Solution
+
 ```js
 function remove (store,id) {
-  var deleteindex = store.map(function(elm){
+  var deleteindex = store.map(function(elm) {
    return elm.id;
   }).indexOf(id);
   store.splice(deleteindex,1);
@@ -320,7 +316,7 @@ var data = [
 remove(data,2);
 remove(data,4);
 ```
-------------
+
 # 07
 
 ```js
@@ -355,15 +351,18 @@ var names = [
 
 randomSelect(names);
 ```
-## Solution
+
+### Solution
+
 ```js
 for (var i = 0 ; i < 10000; i++){
   var randomName= randomSelect(names);
   numberOfTimes[randomName]++;
 }
 ```
-----------------
+
 # 08
+
 ```js
 var numberOfTimes = {
   'Abdallah Ali Al-Shaikh Ali': 0,
@@ -382,28 +381,30 @@ var numberOfTimes = {
   'Alaa Al Ashi': 0,
   'Mohammed Alshorafa': 0
 };
-```
+
 /**
  * Loops 1000 times to make sure that all
  * names get called randomly and all the
  * same time
 **/
-```js
 for(/* something 1000 */) {
   // something with `numberOfTimes`
 }
 
 console.log(numberOfTimes); // check if they are correct
 ```
-## Solution
+
+### Solution
+
 ```js
 function randomSelect(list) {
   var randName = list[Math.floor(Math.random() * list.length)];
   return randName;
 }
 ```
-------------
+
 # 09
+
 ```js
 var a = [
   ['name:Zoo','age:24','language:javascript'],
@@ -428,24 +429,22 @@ var c = [
   {name:'Luu',age:32,language:'ruby'},
 ];
 ```
-## Solution
+
+### Solution
+
 ```js
 function transform(list){
   return list.map(function(elem){
      return elem.reduce(function(object,value){
-
       object[value.split(":")[0]] = value.split(":")[1];
-
       return object
-
     },{});
-
   });
-
 }
 ```
--------------
+
 # 10
+
 ```js
 /**
  * Create a fake `document` object which looks
@@ -482,7 +481,9 @@ var $ = jQuery(fakeDoc);
 
 $('#one').text('Hello World!');
 ```
-## Solution
+
+### Solution
+
 ```js
 var fakeDoc = {
   querySelector:function(sel){
@@ -494,16 +495,15 @@ var fakeDoc = {
       }
     }
   }
-
-
 };
 
 var $ = jQuery(fakeDoc);
 $('#one').addClass('my class!');
 $('#one').text('Hello World!');
 ```
----------------
+
 # 11
+
 ```js
 /**
  *  Create a function called 'pipe'
@@ -550,16 +550,18 @@ function add() {
 
 add('hello',1,'GSG',2,3);
 ```
-## Solution
+
+### Solution
+
 ```js
 var pipe = function() {
 
-     var args = Array.prototype.slice.call(arguments);
+  var args = Array.prototype.slice.call(arguments);
 
   return function(n){
     return args.reduce(function(acc,elem){
       return elem(acc);
-     },n);
+    },n);
   }
 };
 
@@ -581,6 +583,7 @@ function multiply_two (n) {
 function start (n) {
   return parseInt(n);
 }
+
 var parse_add_multiply_subtract = pipe(
   start,
   add_one,
@@ -590,8 +593,9 @@ var parse_add_multiply_subtract = pipe(
 
 parse_add_multiply_subtract('2');
 ```
---------------
+
 # 12
+
 ```js
 /**
  * Implement a waterfall function.
@@ -657,16 +661,18 @@ start('1',function(n){
   });
 });
 ```
-## Solution
+
+### Solution
+
 ```js
 var waterfall = function(value, arg ,cb) {
 
   if( arg.length === 0){
     cb(value);
- }
+  }
 
-  arg[0](value,function(total){
-     waterfall(total,arg.slice(1),cb)
+  arg[0](value,function(total) {
+     waterfall(total,arg.slice(1),cb);
   });
 }
 
@@ -706,8 +712,9 @@ waterfall('5', [
   console.log(res); // => 3
 });
 ```
--------------
+
 # 13
+
 ```js
 /*
  * Complete the 'parallel' function. It should fire
@@ -748,57 +755,57 @@ parallel([
   console.log('result ',result); // [1,2,3]
 });
 ```
-## Solution
+
+### Solution
+
 ```js
 function parallel(tasks,finalCallback) {
 
-var task = tasks.length,
-    results = [],
-    ignore = false;
+  var task = tasks.length,
+  var results = [];
+  var ignore = false;
 
-function callback(err, result) {
-  if (ignore) return;
-  if (err) {
-    ignore = true;
-    finalCallback && finalCallback(err);
-  } else if (--task === 0) {
-    ignore = true;
-    finalCallback && finalCallback(null, results);
-  } else
-    results.push(result);
-}
+  function callback(err, result) {
+    if (ignore) return;
+    if (err) {
+      ignore = true;
+      finalCallback && finalCallback(err);
+    } else if (--task === 0) {
+      ignore = true;
+      finalCallback && finalCallback(null, results);
+    } else
+      results.push(result);
+  }
 
-
-tasks.forEach(function(taskfn) {
-  taskfn(callback);
-});
-
+  tasks.forEach(function(taskfn) {
+    taskfn(callback);
+  });
 }
 
 parallel([
-function(callback) {
-  setTimeout(function() {
-    callback(undefined,1);
-  },2000);
-},
-function(callback) {
-  setTimeout(function() {
-    callback(undefined,2);
-  },1000);
-},
-function(callback) {
-  setTimeout(function() {
-    callback(undefined,3);
-  },1500);
-},
-
+  function(callback) {
+    setTimeout(function() {
+      callback(undefined,1);
+    },2000);
+  },
+  function(callback) {
+    setTimeout(function() {
+      callback(undefined,2);
+    },1000);
+  },
+  function(callback) {
+    setTimeout(function() {
+      callback(undefined,3);
+    },1500);
+  },
 ], function(err,result) {
-console.log('err ',err); // undefined
-console.log('result ',result); // [1,2,3]
+  console.log('err ',err); // undefined
+  console.log('result ',result); // [1,2,3]
 });
 ```
-----------
+
 # 14
+
 ```js
 /**
  * Checks the last name and returns the statistics
@@ -847,18 +854,20 @@ var obj = {
   }
 };
 ```
-## Solution
+
+### Solution
+
 ```js
 function analyse (lastFirstLetter,data) {
-  return Object.values(data).filter(function(element){
-  return element.lastName.slice(0,1)===lastFirstLetter;
-  }).reduce (function(acc,elem,index){
-
+  return Object.values(data).filter(function(element) {
+    return element.lastName.slice(0,1)===lastFirstLetter;
+  }).reduce(function(acc,elem,index){
       acc.letter= lastFirstLetter;
       acc.recurrence= index+1;
       acc.data[index]=elem.lastName;
       return acc;
-  },{data:[]});}
+  },{data:[]});
+}
 
-  analyse("d",obj);
+analyse('d', obj);
 ```

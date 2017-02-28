@@ -12,3 +12,8 @@ This is a list of useful resources in form of talks, libraries and articles.
   A must to understand best practices about Javascript.
 
 - [The Myth of the Genius Programmer by Google.](https://youtu.be/0SARbwvhupQ)
+
+### Blogs
+
+- [antirez:](http://antirez.com) main contributor of [Redis](https://redis.io/),
+  Italian developer living in the beautiful Sicily.
