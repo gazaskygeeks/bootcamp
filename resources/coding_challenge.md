@@ -1,7 +1,7 @@
 # Coding Challenges
 
 List of the coding challenges with solutions. Generally speaking the challenges
-are hard to copy/paste so advise students not to look look around the internet
+are hard to copy/paste so advise students not to look around the internet
 for the solution.
 
 # 01
