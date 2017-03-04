@@ -2,7 +2,7 @@
 
 # 01
 
-/**
+
  * Let's learn method chaining!
  * Write a function `start` which takes
  * as input a number.
@@ -43,7 +43,7 @@ function start(num){
 
 # 02
 
-/**
+
  * Let's build a template engine.
  * Write a function `block` which takes
  * as input a template string e.g. `<p>{{text}}</p>`
@@ -80,6 +80,7 @@ block(template).render({
     <p>We are developers</p>
   </div>
 
+
   ## Solution
 
   ```js
@@ -107,7 +108,6 @@ TemplateEngine(template, {
 
 # 03
 
-/**
  * Let's build JQuery.
  * Create a function `$` which takes as input a
  * query selector e.g. `$('.className') or $('#id')`.
@@ -115,7 +115,7 @@ TemplateEngine(template, {
  * methods:
  *  - $(selector).toggleClass('.info');
  *  - $(selector).height(200).width(200).backgroundColor('red');
-**/
+
 ```js
 function $ (selector) {
   // code here
@@ -151,13 +151,13 @@ change('div').height('200px').width('200px').backgroundColor('BLACK');
 
 # 04
 
-/**
+
  * Write a function `test` which takes two arguments.
  * The first argument is a `string` while the second is a `function`.
  * Every time the function `test` executes it should log the text in
  * the first argument and also check if the two arguments of `t` are equal.
  * If the two arguments of `t` are equal should print `OK:<message text>`.
- */
+
 
 ```js
 function test (message,callbackFun) {
@@ -227,14 +227,14 @@ test('Third', function(t) {
 
 # 05
 
-```js
-/**
+
+
  * Sometimes we want to test more complicated data structures
  * than string or number. We may want to check if two objects
  * or to arrays got the same elements. Write a function which
  * compares two nested objects or arrays.
- */
 
+```js
 var deepEqual = function(/* .... */) {
   // code here
 };
@@ -268,15 +268,15 @@ return deepEqual(a[elm],b[elm]);
 ```
 -------------
 # 06
-```js
-/**
+
+
  * Write a function remove which
  * takes as input and array of objects
  * and a number id.
  * The function should remove the element
  * with the corresponding id.
-**/
 
+```js
 function remove (store,id) {
   // code here
 }
@@ -291,13 +291,13 @@ var data = [
 remove(data,2);
 
 console.log(data);
-/**
+
   [
     {name:'Foo',id:1,age:25},
     {name:'Zoo',id:3,age:18},
     {name:'Lii',id:4,age:20}
   ]
-**/
+
 ```
 
 ## Solution
@@ -323,14 +323,13 @@ remove(data,4);
 ------------
 # 07
 
-```js
-/**
+
  * Given an array of string with your names.
  * Write a function `randomSelect` which
  * takes an array and return one random
  * element inside that array.
- */
 
+```js
 function randomSelect(list) {
   // code here
 }
@@ -385,12 +384,12 @@ var numberOfTimes = {
   'Mohammed Alshorafa': 0
 };
 ```
-/**
+
  * Loops 1000 times to make sure that all
  * names get called randomly and all the
  * same time
-**/
-```
+
+
 
 ## Solution
 
@@ -503,13 +502,14 @@ $('#one').text('Hello World!');
 ```
 ---------------
 # 11
-```js
-/**
+
+
  *  Create a function called 'pipe'
  *  which takes as arguments other functions and returns
  *  another function. The new function behaves as a
  *  chain of all the functions put together.
- */
+
+```js
 var pipe = function() {
   // code here
 };
@@ -548,8 +548,11 @@ function add() {
 }
 
 add('hello',1,'GSG',2,3);
+
 ```
+
 ## Solution
+
 ```js
 var pipe = function() {
 
@@ -591,13 +594,13 @@ parse_add_multiply_subtract('2');
 ```
 --------------
 # 12
-```js
-/**
+
+
  * Implement a waterfall function.
  * This function works very similarly to what we
  * saw yesterday with `pipe`.
- */
 
+```js
 var waterfall = function(arg, tasks, cb) {
   // code here
 }
@@ -707,16 +710,16 @@ waterfall('5', [
 ```
 -------------
 # 13
-```js
-/*
+
+
  * Complete the 'parallel' function. It should fire
  * all the tasks at the same time, and invoke the
  * final callback when they are all done.
  * In case of an error should fire the final callback
  * immediately.
  * More spec http://caolan.github.io/async/docs.html#parallel
- */
 
+```js
 function parallel(tasks,finalCallback) {
   // code here
 }
