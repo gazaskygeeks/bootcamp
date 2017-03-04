@@ -353,14 +353,16 @@ var names = [
   'Mohammed Alshorafa'
 ];
 
-randomSelect(names);
 ```
 ## Solution
+
 ```js
-for (var i = 0 ; i < 10000; i++){
-  var randomName= randomSelect(names);
-  numberOfTimes[randomName]++;
+function randomSelect(list) {
+  var randName = list[Math.floor(Math.random() * list.length)];
+  return randName;
 }
+
+randomSelect(names);
 ```
 ----------------
 # 08
@@ -388,30 +390,24 @@ var numberOfTimes = {
  * names get called randomly and all the
  * same time
 **/
-```js
-for(/* something 1000 */) {
-  // something with `numberOfTimes`
-}
-
-console.log(numberOfTimes); // check if they are correct
 ```
+
 ## Solution
+
 ```js
-function randomSelect(list) {
-  var randName = list[Math.floor(Math.random() * list.length)];
-  return randName;
-}
+for (var i = 0 ; i < 10000; i++){ var randomName= randomSelect(names); numberOfTimes[randomName]++; }
 ```
 ------------
 # 09
+
 ```js
-var a = [
+var list = [
   ['name:Zoo','age:24','language:javascript'],
   ['name:Bar','age:21','language:python'],
   ['name:Foo','age:20','language:php'],
   ['name:Luu','age:32','language:ruby']
 ];
-
+transform (list)
 /**
  * Transform the data above to the following
  * format.
@@ -429,7 +425,9 @@ var c = [
 ];
 ```
 ## Solution
+
 ```js
+
 function transform(list){
   return list.map(function(elem){
      return elem.reduce(function(object,value){
@@ -446,6 +444,7 @@ function transform(list){
 ```
 -------------
 # 10
+
 ```js
 /**
  * Create a fake `document` object which looks
@@ -752,49 +751,44 @@ parallel([
 ```js
 function parallel(tasks,finalCallback) {
 
-var task = tasks.length,
-    results = [],
-    ignore = false;
-
-function callback(err, result) {
-  if (ignore) return;
-  if (err) {
-    ignore = true;
-    finalCallback && finalCallback(err);
-  } else if (--task === 0) {
-    ignore = true;
-    finalCallback && finalCallback(null, results);
-  } else
-    results.push(result);
-}
+  var task = tasks.length,
+      results = [];
 
 
-tasks.forEach(function(taskfn) {
-  taskfn(callback);
-});
-
+  tasks.forEach(function(taskfn,index) {
+    taskfn( function callback(err, result) {
+      if (err) {
+        finalCallback && finalCallback(err);
+      } else if (--task === 0) {
+        results[index]=result;
+        finalCallback && finalCallback(null, results);
+      } else{
+        results[index]=result;
+      }
+   });
+ });
 }
 
 parallel([
-function(callback) {
-  setTimeout(function() {
-    callback(undefined,1);
-  },2000);
-},
-function(callback) {
-  setTimeout(function() {
-    callback(undefined,2);
-  },1000);
-},
-function(callback) {
-  setTimeout(function() {
-    callback(undefined,3);
-  },1500);
-},
+  function one(callback) {
+    setTimeout(function() {
+      callback(undefined,1);
+    },2000);
+  },
+  function two(callback) {
+    setTimeout(function() {
+      callback(undefined,2);
+    },4000);
+  },
+  function three(callback) {
+    setTimeout(function() {
+      callback(undefined,3);
+    },1500);
+  },
 
 ], function(err,result) {
-console.log('err ',err); // undefined
-console.log('result ',result); // [1,2,3]
+  console.log('err ',err); // undefined
+  console.log('result ',result); // [1,2,3]
 });
 ```
 ----------
