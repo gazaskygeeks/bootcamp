@@ -43,7 +43,6 @@ function start(num){
 
 # 02
 
-
  * Let's build a template engine.
  * Write a function `block` which takes
  * as input a template string e.g. `<p>{{text}}</p>`
@@ -69,6 +68,7 @@ block(template).render({
   content: 'Hello GSG',
   myText: 'We are developers'
 });
+
 ```
 
   Result should be:
