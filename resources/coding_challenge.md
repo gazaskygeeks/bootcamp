@@ -37,8 +37,7 @@ function start(num){
           }
             var res = start(5).add(2).add(3).add(20).result();
              console.log("res "+res);
-             ```
-
+```
 ---------
 
 # 02
