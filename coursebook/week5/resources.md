@@ -18,3 +18,21 @@ On APIs:
 - [CodeWars:](https://dev.codewars.com/)
 - [Facebook Messenger:](https://developers.facebook.com/docs/messenger-platform)
 - [Twilio:](https://www.twilio.com/)
+
+### How to set up CodeClimate
+
+Following the simple steps to set up test coverage on CodeClimate.
+
+- Check out the link to the [documentation](https://docs.codeclimate.com/docs/setting-up-test-coverage).
+- Go to test coverage troubleshoot
+- Got JavaScript link
+- Generate coverage data in Lcov format
+- Install `codeclimate-test-reporter`'s NPM package
+- Specifying your repo token as an environment variable
+- Send lcov coverage data to the codeclimate-test-reporter npm script
+
+In the terminal run:
+
+```
+$ CODECLIMATE_REPO_TOKEN=<token> ./node_modules/.bin/codeclimate-test-reporter < ./coverage/lcov.info
+```
