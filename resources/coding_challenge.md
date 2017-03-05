@@ -69,39 +69,39 @@ block(template).render({
   content: 'Hello GSG',
   myText: 'We are developers'
 });
-
-
-  Result should be:
-
-  <div class="container">
-    <h1 class="title">Hello GSG</h1>
-  </div>
-  <div class="body">
-    <p>We are developers</p>
-  </div>
 ```
 
-  ## Solution
+  Result should be:
+```js
+<div class="container">
+  <h1 class="title">Hello GSG</h1>
+</div>
+<div class="body">
+  <p>We are developers</p>
+</div>
+```
 
-  ```js
-  var TemplateEngine = function(tpl, data) {
-  Object.keys(data).forEach(function(key){
-    console.log(key);
-    tpl = tpl.replace("{{"+key+"}}", data[key])
-  })
-    return tpl;
+## Solution
+
+```js
+var TemplateEngine = function(tpl, data) {
+Object.keys(data).forEach(function(key){
+  console.log(key);
+  tpl = tpl.replace("{{"+key+"}}", data[key])
+})
+  return tpl;
 }
 var template =
-   '<div class="container">'
- +   '<h1 class="title">{{content}}</h1>'
- + '</div>'
- + '<div class="body">'
- +   '<p>{{myText}}</p>'
- + '</div>';
+ '<div class="container">'
++   '<h1 class="title">{{content}}</h1>'
++ '</div>'
++ '<div class="body">'
++   '<p>{{myText}}</p>'
++ '</div>';
 
 TemplateEngine(template, {
-  content: 'Hello GSG',
-  myText: 'We are developers'
+content: 'Hello GSG',
+myText: 'We are developers'
 });
 ```
 ---------
