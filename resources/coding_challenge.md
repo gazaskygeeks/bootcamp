@@ -43,7 +43,7 @@ function start(num){
 var res = start(5).add(2).add(3).add(20).result();
 console.log('res', res);
 ```
----------
+
 
 # 02
 
@@ -97,7 +97,7 @@ function block(tpl, data) {
   return tpl;
 }
 ```
---------
+
 # 03
 
  * Let's build JQuery.
@@ -352,7 +352,6 @@ function randomSelect(list) {
 
 randomSelect(names);
 ```
-------
 
 # 08
 
@@ -381,16 +380,6 @@ var numberOfTimes = {
  * same time
 
 ### Solution
-
-```
-
- * Loops 1000 times to make sure that all
- * names get called randomly and all the
- * same time
-
-
-
-## Solution
 
 ```js
 for (var i = 0 ; i < 10000; i++){ var randomName= randomSelect(names); numberOfTimes[randomName]++; }
@@ -442,14 +431,12 @@ function transform(list){
 
 # 10
 
-```js
-/**
  * Create a fake `document` object which looks
  * exactley like the real one.
  * The fake document should behave in the
  * function `jQuery` expects it.
-**/
 
+```js
 var jQuery = function(document) {
   return function(selector) {
     var element = document.querySelector(selector);
