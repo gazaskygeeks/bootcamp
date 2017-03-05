@@ -657,6 +657,7 @@ var waterfall = function(value, arg, cb) {
  * More spec http://caolan.github.io/async/docs.html#parallel
 
 ```js
+
 function parallel(tasks,finalCallback) {
   // code here
 }
@@ -689,7 +690,7 @@ parallel([
 ```
 
 ### Solution
-
+```js
   var task = tasks.length,
       results = [];
 
@@ -707,35 +708,11 @@ parallel([
    });
  });
 }
-
-parallel([
-  function one(callback) {
-    setTimeout(function() {
-      callback(undefined,1);
-    },2000);
-  },
-  function two(callback) {
-    setTimeout(function() {
-      callback(undefined,2);
-    },4000);
-  },
-  function three(callback) {
-    setTimeout(function() {
-      callback(undefined,3);
-    },1500);
-  },
-
-], function(err,result) {
-  console.log('err ',err); // undefined
-  console.log('result ',result); // [1,2,3]
-});
-
 ```
 
 # 14
 
 ```js
-/**
  * Checks the last name and returns the statistics
  * of the recurrence of that name give the first letter.
  * @param  {String} nameFirstLetter a string letter of the alphabet
@@ -747,7 +724,7 @@ parallel([
  *  recurrence: 3,
  *  data: ['daves','dan',diren]
  * }
- */
+ 
 function analyse (lastFirstLetter,data) {
   // code here
 }
