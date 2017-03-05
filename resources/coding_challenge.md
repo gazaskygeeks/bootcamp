@@ -1,5 +1,9 @@
 # Coding Challenges
 
+List of the coding challenges with solutions. Generally speaking the challenges
+are hard to copy/paste so advise students not to look around the internet
+for the solution.
+
 # 01
 
 
@@ -13,30 +17,31 @@
  * console.log(res); // 10
  *
  * Good luck!
-**/
-```js
+
 function start (num) {
   // code here
 }
-```
 
-## Solution
+
+### Solution
+
 ```js
 function start(num){
-            var store=num;
-            var obj={
-              add:function(num1){
-                store = store + num1;
-                return obj;
-              },
-              result : function(){
-                return store;
-              }
-            }
-            return obj;
-          }
-            var res = start(5).add(2).add(3).add(20).result();
-             console.log("res "+res);
+
+  var store=num;
+  var obj={
+    add:function(num1){
+      store = store + num1;
+      return obj;
+    },
+    result : function(){
+      return store;
+    }
+  }
+  return obj;
+}
+var res = start(5).add(2).add(3).add(20).result();
+console.log('res', res);
 ```
 ---------
 
@@ -51,59 +56,48 @@ function start(num){
 
 
 ```js
+
 function block (/* args */) {
   // code here
 }
 
-var template =
-   '<div class="container">'
- +   '<h1 class="title">{{content}}</h1>'
- + '</div>'
- + '<div class="body">'
- +   '<p>{{myText}}</p>'
- + '</div>';
+var template = [
+  '<div class="container">',
+    '<h1 class="title">{{content}}</h1>',
+  '</div>',
+  '<div class="body">',
+    '<p>{{myText}}</p>',
+  '</div>'
+].join('');
 
-block(template).render({
+block(template, {
   content: 'Hello GSG',
   myText: 'We are developers'
 });
 ```
-
-  Result should be:
 ```js
-<div class="container">
-  <h1 class="title">Hello GSG</h1>
-</div>
-<div class="body">
-  <p>We are developers</p>
-</div>
+ * Result should be:
+ * <div class="container">
+ *  <h1 class="title">Hello GSG</h1>
+ * </div>
+ * <div class="body">
+ *  <p>We are developers</p>
+ * </div>
+ */
 ```
-
-## Solution
+### Solution
 
 ```js
-var TemplateEngine = function(tpl, data) {
-Object.keys(data).forEach(function(key){
-  console.log(key);
-  tpl = tpl.replace("{{"+key+"}}", data[key])
-})
+function block(tpl, data) {
+
+  Object.keys(data).forEach(function(key) {
+    tpl = tpl.replace("{{"+key+"}}", data[key]);
+  });
+
   return tpl;
 }
-var template =
- '<div class="container">'
-+   '<h1 class="title">{{content}}</h1>'
-+ '</div>'
-+ '<div class="body">'
-+   '<p>{{myText}}</p>'
-+ '</div>';
-
-TemplateEngine(template, {
-content: 'Hello GSG',
-myText: 'We are developers'
-});
 ```
----------
-
+--------
 # 03
 
  * Let's build JQuery.
@@ -120,35 +114,31 @@ function $ (selector) {
 }
 ```
 
-## Solution
+### Solution
 
 ```js
 function change(selector){
- console.log("test",selector);
  var div1 = document.querySelector(selector);
- console.log("div1",div1);
-   var obj = {
-     height:function(height){
-       div1.style.height = height;
-       return obj;
-     },
-     width: function(width){
-       div1.style.width = width;
-       return obj;
-     },
-     backgroundColor:function(color){
-       div1.style.backgroundColor = color;
-       return obj;
-     }
+ var obj = {
+   height:function(height){
+     div1.style.height = height;
+     return obj;
+   },
+   width: function(width){
+     div1.style.width = width;
+     return obj;
+   },
+   backgroundColor:function(color){
+     div1.style.backgroundColor = color;
+     return obj;
    }
-   return obj;
  }
+ return obj;
+}
 change('div').height('200px').width('200px').backgroundColor('BLACK');
 ```
-------------
 
 # 04
-
 
  * Write a function `test` which takes two arguments.
  * The first argument is a `string` while the second is a `function`.
@@ -158,6 +148,7 @@ change('div').height('200px').width('200px').backgroundColor('BLACK');
 
 
 ```js
+
 function test (message,callbackFun) {
   // code here
 }
@@ -173,40 +164,33 @@ test('Second', function(t) {
 test('Third', function(t) {
   t.equal(3,3,'three is equal to three');
 });
+
+/**
+ * When run the code it should produce this output:
+ *
+ * # First
+ * OK: one is equal to one
+ * # Second
+ * ERROR: two is equal to two
+ * # Third
+ * OK: three is equal to three
+ */
 ```
-When run the code should produce this output.
 
-![alt text](https://raw.githubusercontent.com/besarthoxhaj/breakfast/master/_assets/repl_logs_tape.png)
-
-Please don't look around the internet, will not help you much, even if you find the solution. Note how the second argument of the test function is another function.
-
-Let's have a look at the first example. At runtime the arguments of test are:
-
-message = 'First'
-
-// while
-
-```js
-callbackFun = function (t) {
-  t.equal(1,1,'one is equal to one');
-}
-```
-to complete the requirements you need to log message and to evaluate and log what's in the body of callbackFun. How can you do that? By calling callbackFun itself! Note however that you have to pass one argument (t) to callbackFun.
-
-## Solution
+### Solution
 
 ```js
 function test (message,callbackFun) {
-  console.log("#"+message);
+  console.log('#', message);
   callbackFun({
-    equal:function(num1,num2,msg){
+    equal:function(num1,num2,msg) {
       if(num1==num2){
-        console.log("OK :"+ msg);
+        console.log('OK:', msg);
       }else{
-        console.log("Error: "+msg);
+        console.log('Error:', msg);
       }
     }
-  })
+  });
 }
 
 test('First',function(r) {
@@ -221,7 +205,6 @@ test('Third', function(t) {
   t.equal(3,3,'three is equal to three');
 });
 ```
-----------
 
 # 05
 
@@ -233,6 +216,7 @@ test('Third', function(t) {
  * compares two nested objects or arrays.
 
 ```js
+
 var deepEqual = function(/* .... */) {
   // code here
 };
@@ -253,20 +237,25 @@ console.log(deepEqual(
 )); // -> true
 ```
 
-## Solution
+### Solution
+
 ```js
 var deepEqual = function(a,b) {
-if(typeof a !== 'object' && typeof b !== 'object'){ return a === b;}
+  if(typeof a !== 'object' && typeof b !== 'object') {
+    return a === b;
+  }
 
-if (Object.keys(a).length !== Object.keys(b).length) return false;
-return Object.keys(a).every(function(elm){
-return deepEqual(a[elm],b[elm]);
-});
+  if (Object.keys(a).length !== Object.keys(b).length) {
+    return false;
+  }
+
+  return Object.keys(a).every(function(elm){
+    return deepEqual(a[elm],b[elm]);
+  });
 };
 ```
--------------
-# 06
 
+# 06
 
  * Write a function remove which
  * takes as input and array of objects
@@ -298,10 +287,11 @@ console.log(data);
 
 ```
 
-## Solution
+### Solution
+
 ```js
 function remove (store,id) {
-  var deleteindex = store.map(function(elm){
+  var deleteindex = store.map(function(elm) {
    return elm.id;
   }).indexOf(id);
   store.splice(deleteindex,1);
@@ -318,7 +308,7 @@ var data = [
 remove(data,2);
 remove(data,4);
 ```
-------------
+
 # 07
 
 
@@ -351,7 +341,8 @@ var names = [
 ];
 
 ```
-## Solution
+
+### Solution
 
 ```js
 function randomSelect(list) {
@@ -361,8 +352,10 @@ function randomSelect(list) {
 
 randomSelect(names);
 ```
-----------------
+------
+
 # 08
+
 ```js
 var numberOfTimes = {
   'Abdallah Ali Al-Shaikh Ali': 0,
@@ -387,6 +380,14 @@ var numberOfTimes = {
  * names get called randomly and all the
  * same time
 
+### Solution
+
+```
+
+ * Loops 1000 times to make sure that all
+ * names get called randomly and all the
+ * same time
+
 
 
 ## Solution
@@ -394,7 +395,8 @@ var numberOfTimes = {
 ```js
 for (var i = 0 ; i < 10000; i++){ var randomName= randomSelect(names); numberOfTimes[randomName]++; }
 ```
-------------
+
+
 # 09
 
 ```js
@@ -405,15 +407,15 @@ var list = [
   ['name:Luu','age:32','language:ruby']
 ];
 transform (list)
-/**
+```
  * Transform the data above to the following
  * format.
  * DO NOT USE FOR LOOPS.
  *
  * Hint: google `map` and `reduce`
  *
-**/
 
+```js
 var c = [
   {name:'Zoo',age:24,language:'javascript'},
   {name:'Bar',age:21,language:'python'},
@@ -421,25 +423,23 @@ var c = [
   {name:'Luu',age:32,language:'ruby'},
 ];
 ```
-## Solution
+
+### Solution
+
 
 ```js
 
 function transform(list){
   return list.map(function(elem){
      return elem.reduce(function(object,value){
-
       object[value.split(":")[0]] = value.split(":")[1];
-
       return object
-
     },{});
-
   });
-
 }
 ```
--------------
+
+
 # 10
 
 ```js
@@ -478,7 +478,9 @@ var $ = jQuery(fakeDoc);
 
 $('#one').text('Hello World!');
 ```
-## Solution
+
+### Solution
+
 ```js
 var fakeDoc = {
   querySelector:function(sel){
@@ -490,17 +492,14 @@ var fakeDoc = {
       }
     }
   }
-
-
 };
 
 var $ = jQuery(fakeDoc);
 $('#one').addClass('my class!');
 $('#one').text('Hello World!');
 ```
----------------
-# 11
 
+# 11
 
  *  Create a function called 'pipe'
  *  which takes as arguments other functions and returns
@@ -549,50 +548,24 @@ add('hello',1,'GSG',2,3);
 
 ```
 
-## Solution
+
+### Solution
+
 
 ```js
 var pipe = function() {
 
-     var args = Array.prototype.slice.call(arguments);
+  var args = Array.prototype.slice.call(arguments);
 
-  return function(n){
-    return args.reduce(function(acc,elem){
-      return elem(acc);
-     },n);
+  return function(n) {
+    return args.reduce(function(acc,elm) {
+      return elm(acc);
+    },n);
   }
 };
-
-function add_one (n) {
-  const total = n + 1;
-  return total;
-}
-
-function less_one (n) {
-  const total = n - 1;
-  return total;
-}
-
-function multiply_two (n) {
-  const total = n * 2;
-  return total;
-}
-
-function start (n) {
-  return parseInt(n);
-}
-var parse_add_multiply_subtract = pipe(
-  start,
-  add_one,
-  multiply_two,
-  less_one
-);
-
-parse_add_multiply_subtract('2');
 ```
---------------
-# 12
 
+# 12
 
  * Implement a waterfall function.
  * This function works very similarly to what we
@@ -639,11 +612,12 @@ waterfall('1', [
 ], function(res) {
   console.log(res); // => 3
 });
+```
 
-/**
  * You have to replicate something like
  * this.
- */
+ 
+```js 
 start('1',function(n){
   // console.log(n);
   add_one(n,function(n2){
@@ -657,58 +631,23 @@ start('1',function(n){
   });
 });
 ```
-## Solution
+
+### Solution
+
 ```js
-var waterfall = function(value, arg ,cb) {
+var waterfall = function(value, arg, cb) {
 
   if( arg.length === 0){
     cb(value);
- }
+  }
 
-  arg[0](value,function(total){
-     waterfall(total,arg.slice(1),cb)
+  arg[0](value,function(total) {
+     waterfall(total,arg.slice(1), cb);
   });
 }
-
-function add_one (n,cb) {
-  setTimeout(function(){
-    const total = n + 1;
-    cb(total);
-  },200);
-}
-
-function less_one (n,cb) {
-  setTimeout(function(){
-    const total = n - 1;
-    cb(total);
-  },200);
-}
-
-function multiply_two (n,cb) {
-  setTimeout(function(){
-    const total = n * 2;
-    cb(total);
-  },200);
-}
-function start (n,cb) {
-  setTimeout(function(){
-    const total = parseInt(n)
-    cb(total);
-  },200);
-}
-
-waterfall('5', [
-  start,
-  add_one,
-  multiply_two,
-  less_one
-], function(res) {
-  console.log(res); // => 3
-});
 ```
--------------
-# 13
 
+# 13
 
  * Complete the 'parallel' function. It should fire
  * all the tasks at the same time, and invoke the
@@ -748,9 +687,8 @@ parallel([
   console.log('result ',result); // [1,2,3]
 });
 ```
-## Solution
-```js
-function parallel(tasks,finalCallback) {
+
+### Solution
 
   var task = tasks.length,
       results = [];
@@ -791,9 +729,11 @@ parallel([
   console.log('err ',err); // undefined
   console.log('result ',result); // [1,2,3]
 });
+
 ```
-----------
+
 # 14
+
 ```js
 /**
  * Checks the last name and returns the statistics
@@ -841,19 +781,21 @@ var obj = {
     lastName:'foo'
   }
 };
+
+analyse('d', obj); // TODO
 ```
-## Solution
+
+### Solution
+
 ```js
 function analyse (lastFirstLetter,data) {
-  return Object.values(data).filter(function(element){
-  return element.lastName.slice(0,1)===lastFirstLetter;
-  }).reduce (function(acc,elem,index){
-
+  return Object.values(data).filter(function(element) {
+    return element.lastName.slice(0,1)===lastFirstLetter;
+  }).reduce(function(acc,elem,index){
       acc.letter= lastFirstLetter;
       acc.recurrence= index+1;
       acc.data[index]=elem.lastName;
       return acc;
-  },{data:[]});}
-
-  analyse("d",obj);
+  },{data:[]});
+}
 ```
