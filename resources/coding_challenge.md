@@ -50,7 +50,7 @@ function start(num){
  * Returns something, with a method `.render`
  * which takes as input an object e.g. `{text:'Hello'}
  * and returns the final string e.g. `<p>Hello</p>`.
-**/
+
 
 ```js
 function block (/* args */) {
@@ -69,7 +69,7 @@ block(template).render({
   content: 'Hello GSG',
   myText: 'We are developers'
 });
-```
+
 
   Result should be:
 
@@ -79,7 +79,7 @@ block(template).render({
   <div class="body">
     <p>We are developers</p>
   </div>
-
+```
 
   ## Solution
 
