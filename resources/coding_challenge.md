@@ -6,8 +6,7 @@ for the solution.
 
 # 01
 
-```js
-/**
+
  * Let's learn method chaining!
  * Write a function `start` which takes
  * as input a number.
@@ -18,16 +17,17 @@ for the solution.
  * console.log(res); // 10
  *
  * Good luck!
-**/
+
 function start (num) {
   // code here
 }
-```
+
 
 ### Solution
 
 ```js
 function start(num){
+
   var store=num;
   var obj={
     add:function(num1){
@@ -43,18 +43,20 @@ function start(num){
 var res = start(5).add(2).add(3).add(20).result();
 console.log('res', res);
 ```
+---------
 
 # 02
 
-```js
-/**
  * Let's build a template engine.
  * Write a function `block` which takes
  * as input a template string e.g. `<p>{{text}}</p>`
  * Returns something, with a method `.render`
  * which takes as input an object e.g. `{text:'Hello'}
  * and returns the final string e.g. `<p>Hello</p>`.
-**/
+
+
+```js
+
 function block (/* args */) {
   // code here
 }
@@ -72,8 +74,8 @@ block(template, {
   content: 'Hello GSG',
   myText: 'We are developers'
 });
-
-/**
+```
+```js
  * Result should be:
  * <div class="container">
  *  <h1 class="title">Hello GSG</h1>
@@ -95,11 +97,9 @@ function block(tpl, data) {
   return tpl;
 }
 ```
-
+--------
 # 03
 
-```js
-/**
  * Let's build JQuery.
  * Create a function `$` which takes as input a
  * query selector e.g. `$('.className') or $('#id')`.
@@ -107,7 +107,8 @@ function block(tpl, data) {
  * methods:
  *  - $(selector).toggleClass('.info');
  *  - $(selector).height(200).width(200).backgroundColor('red');
-**/
+
+```js
 function $ (selector) {
   // code here
 }
@@ -139,14 +140,15 @@ change('div').height('200px').width('200px').backgroundColor('BLACK');
 
 # 04
 
-```js
-/**
  * Write a function `test` which takes two arguments.
  * The first argument is a `string` while the second is a `function`.
  * Every time the function `test` executes it should log the text in
  * the first argument and also check if the two arguments of `t` are equal.
  * If the two arguments of `t` are equal should print `OK:<message text>`.
- */
+
+
+```js
+
 function test (message,callbackFun) {
   // code here
 }
@@ -206,13 +208,15 @@ test('Third', function(t) {
 
 # 05
 
-```js
-/**
+
+
  * Sometimes we want to test more complicated data structures
  * than string or number. We may want to check if two objects
  * or to arrays got the same elements. Write a function which
  * compares two nested objects or arrays.
- */
+
+```js
+
 var deepEqual = function(/* .... */) {
   // code here
 };
@@ -253,15 +257,13 @@ var deepEqual = function(a,b) {
 
 # 06
 
-```js
-/**
  * Write a function remove which
  * takes as input and array of objects
  * and a number id.
  * The function should remove the element
  * with the corresponding id.
-**/
 
+```js
 function remove (store,id) {
   // code here
 }
@@ -276,13 +278,13 @@ var data = [
 remove(data,2);
 
 console.log(data);
-/**
+
   [
     {name:'Foo',id:1,age:25},
     {name:'Zoo',id:3,age:18},
     {name:'Lii',id:4,age:20}
   ]
-**/
+
 ```
 
 ### Solution
@@ -309,14 +311,13 @@ remove(data,4);
 
 # 07
 
-```js
-/**
+
  * Given an array of string with your names.
  * Write a function `randomSelect` which
  * takes an array and return one random
  * element inside that array.
- */
 
+```js
 function randomSelect(list) {
   // code here
 }
@@ -339,17 +340,19 @@ var names = [
   'Mohammed Alshorafa'
 ];
 
-randomSelect(names);
 ```
 
 ### Solution
 
 ```js
-for (var i = 0 ; i < 10000; i++){
-  var randomName= randomSelect(names);
-  numberOfTimes[randomName]++;
+function randomSelect(list) {
+  var randName = list[Math.floor(Math.random() * list.length)];
+  return randName;
 }
+
+randomSelect(names);
 ```
+------
 
 # 08
 
@@ -371,47 +374,48 @@ var numberOfTimes = {
   'Alaa Al Ashi': 0,
   'Mohammed Alshorafa': 0
 };
+```
 
-/**
  * Loops 1000 times to make sure that all
  * names get called randomly and all the
  * same time
-**/
-for(/* something 1000 */) {
-  // something with `numberOfTimes`
-}
-
-console.log(numberOfTimes); // check if they are correct
-```
 
 ### Solution
 
-```js
-function randomSelect(list) {
-  var randName = list[Math.floor(Math.random() * list.length)];
-  return randName;
-}
 ```
+
+ * Loops 1000 times to make sure that all
+ * names get called randomly and all the
+ * same time
+
+
+
+## Solution
+
+```js
+for (var i = 0 ; i < 10000; i++){ var randomName= randomSelect(names); numberOfTimes[randomName]++; }
+```
+
 
 # 09
 
 ```js
-var a = [
+var list = [
   ['name:Zoo','age:24','language:javascript'],
   ['name:Bar','age:21','language:python'],
   ['name:Foo','age:20','language:php'],
   ['name:Luu','age:32','language:ruby']
 ];
-
-/**
+transform (list)
+```
  * Transform the data above to the following
  * format.
  * DO NOT USE FOR LOOPS.
  *
  * Hint: google `map` and `reduce`
  *
-**/
 
+```js
 var c = [
   {name:'Zoo',age:24,language:'javascript'},
   {name:'Bar',age:21,language:'python'},
@@ -422,7 +426,9 @@ var c = [
 
 ### Solution
 
+
 ```js
+
 function transform(list){
   return list.map(function(elem){
      return elem.reduce(function(object,value){
@@ -432,6 +438,7 @@ function transform(list){
   });
 }
 ```
+
 
 # 10
 
@@ -494,13 +501,12 @@ $('#one').text('Hello World!');
 
 # 11
 
-```js
-/**
  *  Create a function called 'pipe'
  *  which takes as arguments other functions and returns
  *  another function. The new function behaves as a
  *  chain of all the functions put together.
- */
+
+```js
 var pipe = function() {
   // code here
 };
@@ -539,9 +545,12 @@ function add() {
 }
 
 add('hello',1,'GSG',2,3);
+
 ```
 
+
 ### Solution
+
 
 ```js
 var pipe = function() {
@@ -558,13 +567,11 @@ var pipe = function() {
 
 # 12
 
-```js
-/**
  * Implement a waterfall function.
  * This function works very similarly to what we
  * saw yesterday with `pipe`.
- */
 
+```js
 var waterfall = function(arg, tasks, cb) {
   // code here
 }
@@ -605,11 +612,12 @@ waterfall('1', [
 ], function(res) {
   console.log(res); // => 3
 });
+```
 
-/**
  * You have to replicate something like
  * this.
- */
+ 
+```js 
 start('1',function(n){
   // console.log(n);
   add_one(n,function(n2){
@@ -641,16 +649,14 @@ var waterfall = function(value, arg, cb) {
 
 # 13
 
-```js
-/*
  * Complete the 'parallel' function. It should fire
  * all the tasks at the same time, and invoke the
  * final callback when they are all done.
  * In case of an error should fire the final callback
  * immediately.
  * More spec http://caolan.github.io/async/docs.html#parallel
- */
 
+```js
 function parallel(tasks,finalCallback) {
   // code here
 }
@@ -684,29 +690,46 @@ parallel([
 
 ### Solution
 
-```js
-function parallel(tasks,finalCallback) {
-
   var task = tasks.length,
-  var results = [];
-  var ignore = false;
+      results = [];
 
-  function callback(err, result) {
-    if (ignore) return;
-    if (err) {
-      ignore = true;
-      finalCallback && finalCallback(err);
-    } else if (--task === 0) {
-      ignore = true;
-      finalCallback && finalCallback(null, results);
-    } else
-      results.push(result);
-  }
 
-  tasks.forEach(function(taskfn) {
-    taskfn(callback);
-  });
+  tasks.forEach(function(taskfn,index) {
+    taskfn( function callback(err, result) {
+      if (err) {
+        finalCallback && finalCallback(err);
+      } else if (--task === 0) {
+        results[index]=result;
+        finalCallback && finalCallback(null, results);
+      } else{
+        results[index]=result;
+      }
+   });
+ });
 }
+
+parallel([
+  function one(callback) {
+    setTimeout(function() {
+      callback(undefined,1);
+    },2000);
+  },
+  function two(callback) {
+    setTimeout(function() {
+      callback(undefined,2);
+    },4000);
+  },
+  function three(callback) {
+    setTimeout(function() {
+      callback(undefined,3);
+    },1500);
+  },
+
+], function(err,result) {
+  console.log('err ',err); // undefined
+  console.log('result ',result); // [1,2,3]
+});
+
 ```
 
 # 14
