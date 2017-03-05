@@ -39,7 +39,7 @@ function start(num){
              console.log("res "+res);
              ```
 
------------
+---------
 
 # 02
 
@@ -68,7 +68,6 @@ block(template).render({
   content: 'Hello GSG',
   myText: 'We are developers'
 });
-
 ```
 
   Result should be:
