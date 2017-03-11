@@ -2,7 +2,7 @@
 
 This week you will be introduced to a Node framework, called *hapi.js* and to a
 JavaScript templating engine, called *Handlebars.js*. You will then write your
-own hapi server and build a blog site using a postgreSQL database and server-side
+own hapi server and build a blog site using a PostgreSQL database and server-side
 template rendering.
 
 As this is the first week when you are introduced to a framework, it's worth
@@ -41,11 +41,11 @@ and applications.
 
 hapi.js is an open-source framework that provides us with different objects and
 methods for abstracting HTTP and importantly gives us the ability to easily build
-in other capabilities using plugins. hapi has a powerful plugin system, that
+in other capabilities using plugins. Hapi has a powerful plugin system, that
 allows us to use smaller, independent modules (i.e. plugins) by registering them
 directly into the instance of the server we are working on.
 
->hapi is a simple to use configuration-centric framework with built-in support
+> hapi is a simple to use configuration-centric framework with built-in support
 for input validation, caching, authentication, and other essential facilities
 for building web and services applications. hapi enables developers to focus on
 writing reusable application logic in a highly modular and prescriptive approach.  
@@ -71,36 +71,33 @@ ultimately render views.
 ### Week structure
 
 #### Sunday
-- 9:00 - 10:00 - Intro to hapi.js and libraries / frameworks
-- 10:15 - 11:15 - Hapi Server & Inert walk-through
-- 11:15 - 13:00 - [Make me hapi workshop](https://github.com/hapijs/makemehapi)
-— LUNCH —
-- 14:00 - 16:00 - Hapi Vision & Handlebars walk-through & workshop
-- 16:00 - 18:00 - Business development
+- 9:00 - 13:00 - [Make me Hapi workshop](https://github.com/hapijs/makemehapi)
+- LUNCH -
+- 14:00 - 17:00 - [Make me Hapi workshop](https://github.com/hapijs/makemehapi)
 
 #### Monday
-- 09:00 - 12:45 - Testing in hapi & `server.inject` workshop
-- 12:45 - 13:00 - Introduce [research topics](./research-afternoon.md)
-— LUNCH —
-- 14:00 - 16:30 - Research
-- 16:30 - 17:30 - Review and present research topics
-- 17:30 - 18:00 - Introduce [project](./project.md)
+- 09:00 - 09:30 - Introduce [research topics](./research.md)
+- 09:30 - 13:00 - Research
+- LUNCH -
+- 14:00 - 16:00 - Research
+- 16:00 - 16:30 - Review and present research topics
+- 16:30 - 17:00 - Introduce [project](./project.md)
 
 #### Tuesday
-- 09:00 - 10:00 - Morning challenge - Setting a cookie
-- 11:00 - 13:00 - Projects (planning)
-— LUNCH —
+- 09:00 - 10:00 - Planning projects
+- 11:00 - 13:00 - Projects
+- LUNCH -
 - 14:00 - 17:00 - Projects
 
 #### Wednesday
 - 09:00 - 13:00 - Projects
-— LUNCH —
+- LUNCH -
 - 14:00 - 17:00 - Projects
 
 #### Thursday
 - 09:00 - 11:00 - Code review
 - 11:00 - 12:45 - Respond to issues
 - 12:45 - 13:00 - Plan presentations
-— LUNCH —
+- LUNCH -
 - 14:00 - 15:00 - Presentations
 - 15:00 - 16:00 - Stop-Go-Continue

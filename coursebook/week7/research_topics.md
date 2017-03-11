@@ -17,7 +17,6 @@
 2. Research what caching is, and why is it important for your application's
    performance.
 
-
 ## Templating with helper functions
 1. Research what helper functions are, and how they can be implemented in Handlebars.
 2. Create a basic hapi project with Handlebars templating, in which you use at
