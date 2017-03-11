@@ -72,13 +72,13 @@ ultimately render views.
 
 #### Sunday
 - 9:00 - 13:00 - [Make me Hapi workshop](https://github.com/hapijs/makemehapi)
-- LUNCH -
+- LUNCH
 - 14:00 - 17:00 - [Make me Hapi workshop](https://github.com/hapijs/makemehapi)
 
 #### Monday
 - 09:00 - 09:30 - Introduce [research topics](./research.md)
 - 09:30 - 13:00 - Research
-- LUNCH -
+- LUNCH
 - 14:00 - 16:00 - Research
 - 16:00 - 16:30 - Review and present research topics
 - 16:30 - 17:00 - Introduce [project](./project.md)
@@ -86,18 +86,18 @@ ultimately render views.
 #### Tuesday
 - 09:00 - 10:00 - Planning projects
 - 11:00 - 13:00 - Projects
-- LUNCH -
+- LUNCH
 - 14:00 - 17:00 - Projects
 
 #### Wednesday
 - 09:00 - 13:00 - Projects
-- LUNCH -
+- LUNCH
 - 14:00 - 17:00 - Projects
 
 #### Thursday
 - 09:00 - 11:00 - Code review
 - 11:00 - 12:45 - Respond to issues
 - 12:45 - 13:00 - Plan presentations
-- LUNCH -
+- LUNCH
 - 14:00 - 15:00 - Presentations
 - 15:00 - 16:00 - Stop-Go-Continue
