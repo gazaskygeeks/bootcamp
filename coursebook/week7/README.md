@@ -76,7 +76,7 @@ ultimately render views.
 - 14:00 - 17:00 - [Make me Hapi workshop](https://github.com/hapijs/makemehapi)
 
 #### Monday
-- 09:00 - 09:30 - Introduce [research topics](./research.md)
+- 09:00 - 09:30 - Introduce [research topics](./research_topics.md)
 - 09:30 - 13:00 - Research
 - LUNCH
 - 14:00 - 16:00 - Research
