@@ -3,7 +3,7 @@
 ## Goal
 **Master callbacks**
 
-![callback-hell](https://s3-ap-southeast-1.amazonaws.com/kipalog.com/B4UaJfMCQAE67QB.png)
+![callback hell](https://cloud.githubusercontent.com/assets/12934669/24090698/4dafbc96-0d4b-11e7-8fe8-b279b28bd23d.png)
 
 ### If you don't have an idea, try this:
 1. Starting from a chosen address (or using javascript to find client location), retrieve location info with **[Google Maps geocoding](https://developers.google.com/maps/documentation/geocoding/intro#geocoding)**
