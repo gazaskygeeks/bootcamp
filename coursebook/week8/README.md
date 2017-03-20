@@ -17,9 +17,10 @@
 
 ### Day 2
 
-- 09:00 - 10:00 Office hours
-- 10:00 - 16:30 Readme/research topics (Authentication - Authorisation - Security)
-- 16:30 Introduce project
+- 09:00 - 10:00 [Morning Challenge](morning-challenge-apis.md)
+- 10:00 - 10:30 [Hapi](https://github.com/mantagen/github-oauth-example) / [Express](https://github.com/mantagen/github-oauth-example-express) example walkthrough.
+- 10:30 - 12:30 Starting from [Hapi](https://github.com/mantagen/github-oauth-example), implement [sessions with cookies using JWTs](https://github.com/dwyl/hapi-auth-jwt2)
+- 12:30 Introduce project 
 
 ### Day 3
 

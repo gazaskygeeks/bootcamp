@@ -5,6 +5,7 @@
 This application will:
 
 - Expose an OAuth2 api
+- Worth in conjunction with resource server in this repo
 - Contain endpoints which require authentication
 
 ## Create a simple client application
