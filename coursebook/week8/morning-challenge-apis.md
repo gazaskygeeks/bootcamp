@@ -3,9 +3,9 @@
 ## Goal
 **Master callbacks**
 
-![callback-hell](https://s3-ap-southeast-1.amazonaws.com/kipalog.com/B4UaJfMCQAE67QB.png_mnu9u7omer)
+![callback hell](https://cloud.githubusercontent.com/assets/12934669/24090698/4dafbc96-0d4b-11e7-8fe8-b279b28bd23d.png)
 
-### If you don't have an idea, try this:
+### Steps:
 1. Starting from a chosen address (or using javascript to find client location), retrieve location info with **[Google Maps geocoding](https://developers.google.com/maps/documentation/geocoding/intro#geocoding)**
 2. Retrieve the weather forecast for the next 5 days for that location with **[MetaWeather API](https://www.metaweather.com/api)**. You will probably need 2 separate calls for that (one for location id, one for weather result).
 3. Store the each day's forecast in a separate json file. If you haven't tried node's **fs** module yet, the docs are **[here](https://nodejs.org/api/fs.html#fs_fs_writefile_file_data_options_callback)**.
